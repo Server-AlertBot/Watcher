@@ -1,0 +1,34 @@
+plugins {
+    id 'java'
+    id 'application'
+    id 'org.springframework.boot' version '2.4.0'
+	id 'io.spring.dependency-management' version '1.0.10.RELEASE'
+    id 'eclipse'
+    id "com.github.johnrengelman.shadow" version "6.1.0"
+    
+}
+
+group = 'nl.thedutchmc'
+version = '0.1-SNAPSHOT'
+//sourceCompatiblity = '11'
+
+repositories {
+    jcenter()
+    mavenCentral()
+}
+
+dependencies {
+    implementation 'com.google.guava:guava:28.0-jre'
+   	implementation 'org.springframework.boot:spring-boot-starter-web'
+    compile group: 'org.json', name: 'json', version: '20200518'
+   	compile("ch.qos.logback:logback-classic:1.2.3")
+   	compile group: 'mysql', name: 'mysql-connector-java', version: '5.1.13'
+   	
+   	compile ('net.dv8tion:JDA:4.2.0_209') {
+        exclude module: 'opus-java'
+    }
+}
+
+application {
+	mainClassName = 'nl.thedutchmc.alertbot.App'
+}
