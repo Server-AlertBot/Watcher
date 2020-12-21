@@ -52,6 +52,12 @@ public class WatcherRunnable implements Runnable {
 					//If no, add it.
 					if(App.watches.containsKey(clientSock.getInetAddress())) {
 						Watch w = App.watches.get(clientSock.getInetAddress());
+						
+						//Watch was previously offline, now it is back online.
+						if(!w.isOnline()) {
+							
+						}
+						
 						w.setOnline(true);
 					} else {
 						Watch w = new Watch(clientSock.getInetAddress(), responseJson.getString("name"));

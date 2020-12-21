@@ -110,7 +110,7 @@ public class App {
 			EmbedBuilder builder = new EmbedBuilder()
 					.setColor(Color.RED)
 					.setTitle("Notice: " + w.getName() + " is offline!")
-					.setDescription(w.getName() + " is offline!");
+					.setDescription(w.getName() + " has suffered an outage. We are working on restoring the service as soon as possible.");
 		
 			JdaHandler.sendEmbed(builder.build());
 		}
@@ -122,7 +122,18 @@ public class App {
 			EmbedBuilder builder = new EmbedBuilder()
 					.setColor(Color.RED)
 					.setTitle("Notice: " + hostname + " is offline!")
-					.setDescription("It looks like the node with the hostname " + hostname + " is offline. It is unknown what the function of this node is.");
+					.setDescription("It looks like the node with the hostname " + hostname + " is offline. It is unknown what the function of this node is. We are working on restoring the service as soon as possible.");
+			
+			JdaHandler.sendEmbed(builder.build());
+		}
+	}
+	
+	public static void restored(Watch w) {
+		if(discordEnabled) {
+			EmbedBuilder builder = new EmbedBuilder()
+					.setColor(Color.GREEN)
+					.setTitle("Notice: " + w.getName() + " is back online!")
+					.setDescription(w.getName() + " is back online. Thank you for your patience.");
 			
 			JdaHandler.sendEmbed(builder.build());
 		}
