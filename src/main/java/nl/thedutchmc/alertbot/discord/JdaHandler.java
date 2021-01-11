@@ -11,6 +11,7 @@ import net.dv8tion.jda.api.entities.Activity;
 import net.dv8tion.jda.api.entities.MessageEmbed;
 import net.dv8tion.jda.api.entities.TextChannel;
 import net.dv8tion.jda.api.requests.GatewayIntent;
+import nl.thedutchmc.alertbot.App;
 import nl.thedutchmc.alertbot.Config;
 
 public class JdaHandler {
@@ -43,7 +44,9 @@ public class JdaHandler {
 		c.sendMessage(e).queue(message -> {
 			//Crosspost the message ("Publish") if the target channel is a news Channel
 			if(c.isNews()) {
-				message.crosspost();
+				message.crosspost().queue();
+			} else {
+				App.logInfo("Not crossposting. Not a news channel.");
 			}
 		});
 	}
