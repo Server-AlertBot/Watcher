@@ -55,7 +55,7 @@ public class WatcherRunnable implements Runnable {
 						
 						//Watch was previously offline, now it is back online.
 						if(!w.isOnline()) {
-							
+							App.restored(w);
 						}
 						
 						w.setOnline(true);
