@@ -40,6 +40,11 @@ public class JdaHandler {
 	
 	public static void sendEmbed(MessageEmbed e) {
 		TextChannel c = jda.getTextChannelById(Long.valueOf((String) Config.get("alertChannelId")));
-		c.sendMessage(e).queue();
+		c.sendMessage(e).queue(message -> {
+			//Crosspost the message ("Publish") if the target channel is a news Channel
+			if(c.isNews()) {
+				message.crosspost();
+			}
+		});
 	}
 }
