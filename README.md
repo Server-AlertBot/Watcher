@@ -5,7 +5,7 @@ Program which will monitor your servers, and notify you if one goes down
 The Watcher is the part of the program that will do the monitoring and notifying.
 
 ## Watch
-The Watch is the part of the program you run on all the servers you want monitored. This can be found on the [Watch](https://github.com/TheDutchMC/AlertBot/tree/watch) branch.
+The Watch is the part of the program you run on all the servers you want monitored. Multiple versions of Watch exist, e.g as a standalone application and as a Spigot plugin. These are all seperate repositories in this organization.
 
 ## Configuration of the Watcher
 When you run the Watcher for the first time, it will generate an `alertbot.json` file in the same directory as the jar file.
