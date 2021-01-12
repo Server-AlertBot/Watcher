@@ -45,6 +45,7 @@ Default config:
 ```json
 {
     "name": "This would be the name, e.g CDN-1 or Proxy-1",
+    "port": 5555
 }
 ```
 - `name` This is the name of the node, e.g CDN-1 or Proxy-1.
